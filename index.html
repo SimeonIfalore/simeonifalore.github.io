@@ -67,11 +67,11 @@
 <body class="antialiased selection:bg-white selection:text-black">
 
     <nav class="fixed w-full z-50 flex justify-between items-center px-6 py-6 md:px-12 md:py-8 mix-blend-difference text-white">
-        <a href="#" class="text-xl font-black tracking-tighter border-2 border-white px-2 py-1 leading-none hover:bg-white hover:text-black transition z-50">
+        <a href="#" class="text-xl font-black tracking-tighter border-2 border-white px-2 py-1 leading-none hover:bg-white hover:text-black transition z-50 relative">
             SI
         </a>
         
-        <div class="hidden md:flex gap-8 text-[11px] uppercase tracking-[0.2em] font-bold items-center">
+        <div class="hidden md:flex gap-8 text-[11px] uppercase tracking-[0.2em] font-bold items-center relative z-50">
             <a href="#about" class="hover:text-gray-400 transition-colors">About</a>
             <a href="#stack" class="hover:text-gray-400 transition-colors">Stack</a>
             <a href="#projects" class="hover:text-gray-400 transition-colors">Projects</a>
@@ -80,10 +80,19 @@
             <a href="https://calendly.com/ifaloresimeon/new-meeting" target="_blank" class="border-b border-white pb-0.5 hover:text-gray-400 hover:border-gray-400 transition-colors">Book a Call</a>
         </div>
         
-        <div class="md:hidden text-xl cursor-pointer">
+        <div id="mobile-menu-btn" class="md:hidden text-xl cursor-pointer relative z-50 transition-transform duration-300">
             <i class="fa-solid fa-bars"></i>
         </div>
     </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-[#050505]/95 backdrop-blur-md flex flex-col items-center justify-center gap-8 text-xs uppercase tracking-[0.2em] font-bold opacity-0 pointer-events-none transition-opacity duration-300 md:hidden">
+        <a href="#about" class="mobile-link text-white hover:text-gray-400 transition-colors">About</a>
+        <a href="#stack" class="mobile-link text-white hover:text-gray-400 transition-colors">Stack</a>
+        <a href="#projects" class="mobile-link text-white hover:text-gray-400 transition-colors">Projects</a>
+        <a href="#offerings" class="mobile-link text-white hover:text-gray-400 transition-colors">Offerings</a>
+        <a href="#writings" class="mobile-link text-white hover:text-gray-400 transition-colors">Writings</a>
+        <a href="https://calendly.com/ifaloresimeon/new-meeting" target="_blank" class="mobile-link border border-white text-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Book a Call</a>
+    </div>
 
     <main class="relative h-screen min-h-[600px] w-full flex flex-col justify-end">
         <div class="absolute inset-0 z-0">
@@ -429,5 +438,36 @@
         </div>
     </footer>
 
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = menuBtn.querySelector('i');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Toggle menu open/close
+        menuBtn.addEventListener('click', () => {
+            const isClosed = mobileMenu.classList.contains('opacity-0');
+            if (isClosed) {
+                // Open Menu
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                // Close Menu
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu automatically when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+    </script>
 </body>
 </html>
