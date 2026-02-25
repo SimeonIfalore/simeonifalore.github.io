@@ -71,7 +71,7 @@
             SI
         </a>
         
-        <div class="hidden md:flex gap-8 text-[11px] uppercase tracking-[0.2em] font-bold items-center relative z-50">
+        <div class="hidden md:flex gap-8 text-[11px] uppercase tracking-[0.2em] font-bold items-center relative z-50 flex-grow justify-center">
             <a href="#about" class="hover:text-gray-400 transition-colors">About</a>
             <a href="#stack" class="hover:text-gray-400 transition-colors">Stack</a>
             <a href="#projects" class="hover:text-gray-400 transition-colors">Projects</a>
@@ -80,8 +80,15 @@
             <a href="https://calendly.com/ifaloresimeon/new-meeting" target="_blank" class="border-b border-white pb-0.5 hover:text-gray-400 hover:border-gray-400 transition-colors">Book a Call</a>
         </div>
         
-        <div id="mobile-menu-btn" class="md:hidden text-xl cursor-pointer relative z-50 transition-transform duration-300">
-            <i class="fa-solid fa-bars"></i>
+        <div class="flex items-center gap-4 z-50 relative">
+            <div class="relative">
+                <input type="text" id="project-search" placeholder="Search projects..." onkeyup="performSearch(this.value)" class="bg-white/10 border border-white/20 text-white text-[10px] uppercase tracking-widest rounded-full px-4 py-2 pl-8 focus:outline-none focus:bg-white focus:text-black transition-all w-40 md:w-56 focus:w-48 md:focus:w-72 placeholder:text-gray-400 placeholder:normal-case font-mono">
+                <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs pointer-events-none"></i>
+            </div>
+            
+            <div id="mobile-menu-btn" class="md:hidden text-xl cursor-pointer transition-transform duration-300">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div>
     </nav>
 
@@ -94,373 +101,677 @@
         <a href="https://calendly.com/ifaloresimeon/new-meeting" target="_blank" class="mobile-link border border-white text-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Book a Call</a>
     </div>
 
-    <main class="relative h-screen min-h-[600px] w-full flex flex-col justify-end">
-        <div class="absolute inset-0 z-0">
-            <img src="images/simeon.jpeg" alt="Simeon Ifalore" class="w-full h-full object-cover object-top brightness-[0.8] grayscale hover:grayscale-0 transition duration-[2s]">
-            <div class="absolute inset-0 hero-gradient"></div>
-        </div>
-
-        <div class="relative z-10 px-6 md:px-12 pb-12 md:pb-20 w-full">
-            <div class="flex flex-col justify-end gap-8">
-                <div>
-                    <h1 class="text-huge text-white mb-4">
-                        SIMEON<br>
-                        <span class="text-transparent" style="-webkit-text-stroke: 1px rgba(255,255,255,0.4);">IFALORE</span>
-                    </h1>
-                </div>
-                
-                <div class="md:mb-4 max-w-xl">
-                    <p class="text-sm text-gray-400 leading-relaxed font-light opacity-80 mb-8 max-w-md">
-                        Transforming raw numbers into clear, decisive business action through scalable engineering and predictive intelligence.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://calendly.com/ifaloresimeon/new-meeting" target="_blank" class="px-6 py-3 bg-white text-black text-xs font-bold uppercase tracking-widest hover:bg-gray-200 transition">
-                            Book Consultation
-                        </a>
-                        <a href="Simeon_Ifalore.pdf" download class="px-6 py-3 border border-white text-white text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition flex items-center gap-2">
-                            <i class="fa-solid fa-download"></i> Resume
-                        </a>
-                        <a href="#projects" class="px-6 py-3 border border-white/20 text-white text-xs font-bold uppercase tracking-widest hover:bg-white/10 transition">
-                            View Work
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <section id="about" class="py-24 px-6 md:px-12 bg-[#050505]">
-        <h2 class="text-xs text-gray-500 tracking-[0.4em] mb-12 uppercase font-bold">Biography</h2>
-        
-        <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-stretch mb-16 overflow-hidden">
-            
-            <div class="w-full md:w-[35%] shrink-0 relative min-h-[300px]">
-                <div class="absolute inset-0 w-full h-full bg-zinc-900 rounded-sm overflow-hidden">
-                    <img src="images/simeon.jpeg" alt="Simeon Ifalore" class="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition duration-700">
-                </div>
-            </div>
-
-            <div class="flex-1 flex flex-col min-w-0 gap-6">
-                
-                <div class="glass p-6 md:p-8 rounded-sm relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-1 h-full bg-white"></div>
-                    <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-3">Current Focus</p>
-                    <h3 class="text-[10px] md:text-xs font-bold text-white leading-relaxed uppercase tracking-widest break-words">
-                        BI/Senior Data Analyst <span class="text-gray-600 mx-1">|</span> 
-                        Data Scientist <span class="text-gray-600 mx-1">|</span> 
-                        AI/ML Engineer <span class="text-gray-600 mx-1">|</span> 
-                        Analytics Engineer <span class="text-gray-600 mx-1">|</span> 
-                        Data Engineer <span class="text-gray-600 mx-1">|</span> 
-                        MLOps/Cloud DevOps Engineer
-                    </h3>
-                </div>
-
-                <div class="glass p-6 md:p-8 rounded-sm prose prose-invert text-gray-400 font-light leading-7 text-sm max-w-none">
-                    <p class="mb-4">
-                        Hi, I’m Simeon Ifalore, a data professional passionate about building scalable solutions across analytics, AI, data engineering, and MLOps. To best reflect my multifaceted background, I have structured this portfolio to allow recruiters and collaborators to navigate directly to the specific expertise their team requires.
-                    </p>
-                    <p class="mb-4">
-                        My journey into data began in biomedical school. Encountering Biostatistics, I saw firsthand how data could explain complex real-world health and human outcomes. That curiosity evolved into a career dedicated to helping organizations transform raw, unstructured data into strategic insights and robust, reliable systems.
-                    </p>
-                    <p class="mb-0">
-                        I am driven by the conviction that work should generate measurable value, not just activity. Guided by my core principle—impact over effort—I focus on engineering solutions that empower organizations and communities to make informed, data-backed decisions and create meaningful change.
-                    </p>
-                </div>
-                
-            </div>
-        </div>
-
-        <div class="pt-10 border-t border-white/10">
-            <h4 class="text-white font-bold mb-6 uppercase text-xs tracking-widest">Select Your Role</h4>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="glass p-6 hover:bg-white/5 transition group cursor-default">
-                    <h5 class="text-white font-bold text-sm mb-2 group-hover:text-blue-400 transition">Data Analyst / Scientist</h5>
-                    <p class="text-xs text-gray-400">Dashboards, Reporting, SQL, Power BI, Tableau, Python, R.</p>
-                </div>
-                <div class="glass p-6 hover:bg-white/5 transition group cursor-default">
-                    <h5 class="text-white font-bold text-sm mb-2 group-hover:text-green-400 transition">AI / ML Engineer</h5>
-                    <p class="text-xs text-gray-400">Predictive Modeling, Deep Learning, NLP, PyTorch, TensorFlow.</p>
-                </div>
-                <div class="glass p-6 hover:bg-white/5 transition group cursor-default">
-                    <h5 class="text-white font-bold text-sm mb-2 group-hover:text-purple-400 transition">Analytics / Data Engineer</h5>
-                    <p class="text-xs text-gray-400">Pipelines, ETL, Hadoop, Spark, Kafka, Cloud Warehousing.</p>
-                </div>
-                <div class="glass p-6 hover:bg-white/5 transition group cursor-default">
-                    <h5 class="text-white font-bold text-sm mb-2 group-hover:text-orange-400 transition">MLOps / Cloud DevOps</h5>
-                    <p class="text-xs text-gray-400">Deployment, CI/CD, Cloud Infrastructure, AWS, Docker.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="stack" class="py-20 px-6 md:px-12 border-t border-white/5 bg-[#050505]">
-        
-        <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
-            
-            <div>
-                <h3 class="text-xs text-gray-500 tracking-[0.4em] mb-8 uppercase font-bold">Tech Stack</h3>
-                <div class="mb-6">
-                    <p class="text-xs text-gray-400 mb-3 uppercase tracking-wider">Languages & Core</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag">Python</span><span class="tech-tag">R</span><span class="tech-tag">SQL</span><span class="tech-tag">C++</span><span class="tech-tag">Bash</span>
-                    </div>
-                </div>
-                <div class="mb-6">
-                    <p class="text-xs text-gray-400 mb-3 uppercase tracking-wider">AI & Data Science</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag">PyTorch</span><span class="tech-tag">TensorFlow</span><span class="tech-tag">Scikit-learn</span><span class="tech-tag">OpenCV</span><span class="tech-tag">XGBoost</span>
-                    </div>
-                </div>
-                <div class="mb-6">
-                    <p class="text-xs text-gray-400 mb-3 uppercase tracking-wider">Big Data & Engineering</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag">Spark</span><span class="tech-tag">Hadoop</span><span class="tech-tag">Kafka</span><span class="tech-tag">MongoDB</span><span class="tech-tag">Databricks</span><span class="tech-tag">Airflow</span><span class="tech-tag">dbt</span>
-                    </div>
-                </div>
-                <div class="mb-6">
-                    <p class="text-xs text-gray-400 mb-3 uppercase tracking-wider">MLOps & Cloud</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag">AWS</span><span class="tech-tag">Azure</span><span class="tech-tag">Docker</span><span class="tech-tag">Kubernetes</span><span class="tech-tag">MLflow</span><span class="tech-tag">CI/CD</span>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <div id="education">
-                    <h3 class="text-xs text-gray-500 tracking-[0.4em] mb-8 uppercase font-bold">Education</h3>
-                    <div class="relative border-l border-white/10 pl-8 ml-2 space-y-10">
-                        <div class="relative">
-                            <span class="absolute -left-[37px] top-1 h-4 w-4 rounded-full bg-white border-4 border-[#050505]"></span>
-                            <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
-                                <h4 class="text-lg font-bold text-white">MSc. Information Technology</h4>
-                                <span class="text-xs text-gray-500 font-mono">2025 - Present</span>
-                            </div>
-                            <p class="text-sm text-gray-300">MIVA University</p>
-                            <p class="text-xs text-gray-500 mt-1">Specialization in Data Science / Artificial Intelligence</p>
-                        </div>
-                        <div class="relative">
-                            <span class="absolute -left-[37px] top-1 h-4 w-4 rounded-full bg-gray-600 border-4 border-[#050505]"></span>
-                            <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
-                                <h4 class="text-lg font-bold text-white">B.Sc. Physiology</h4>
-                                <span class="text-xs text-gray-500 font-mono">Graduated</span>
-                            </div>
-                            <p class="text-sm text-gray-300">University of Benin</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-
-        <div id="certifications" class="w-full">
-            <h3 class="text-xs text-gray-500 tracking-[0.4em] mb-8 uppercase font-bold text-center">Certifications & Fellowships</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <div class="glass p-6 rounded-sm hover:bg-white/5 transition flex flex-col justify-center text-center items-center">
-                    <h4 class="text-sm font-bold text-white mb-2">Analytics Engineering Fellowship</h4>
-                    <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-auto">Behind the Data Academy</p>
-                </div>
-
-                <div class="glass p-6 rounded-sm hover:bg-white/5 transition flex flex-col justify-center text-center items-center">
-                    <h4 class="text-sm font-bold text-white mb-2">Data Science & Business Analytics</h4>
-                    <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-auto">Simplilearn</p>
-                </div>
-                
-                <div class="glass p-6 rounded-sm hover:bg-white/5 transition flex flex-col justify-center text-center items-center">
-                    <h4 class="text-sm font-bold text-white mb-2">Complete Machine Learning & Data Science</h4>
-                    <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-auto">ZTM Academy</p>
-                </div>
-                
-                <div class="glass p-6 rounded-sm hover:bg-white/5 transition flex flex-col justify-center text-center items-center">
-                    <h4 class="text-sm font-bold text-white mb-2">Complete Data Analyst Bootcamp</h4>
-                    <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-auto">365 Careers</p>
-                </div>
-                
-                <div class="glass p-6 rounded-sm hover:bg-white/5 transition flex flex-col justify-center text-center items-center">
-                    <h4 class="text-sm font-bold text-white mb-2">Python & R for Data Science</h4>
-                    <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-auto">IBM Skills Network</p>
-                </div>
-                
-                <div class="glass p-6 rounded-sm hover:bg-white/5 transition flex flex-col justify-center text-center items-center">
-                    <h4 class="text-sm font-bold text-white mb-2">Deploying ML Models with Streamlit</h4>
-                    <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-auto">Workshops for Ukraine</p>
-                </div>
-                
-            </div>
-        </div>
-
-    </section>
-
-    <section id="projects" class="py-12 px-6 md:px-12 bg-[#050505]">
-        <div class="flex items-center gap-4 mb-12">
-            <h2 class="text-4xl font-black text-white uppercase tracking-tighter">Selected Works</h2>
+    <section id="search-results-section" class="pt-32 pb-24 px-6 md:px-12 bg-[#050505] min-h-screen hidden border-b border-white/10">
+        <div class="flex items-center gap-4 mb-16">
+            <h2 class="text-4xl font-black text-white uppercase tracking-tighter">Search Results</h2>
             <div class="h-[1px] flex-grow bg-white/20"></div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <a href="https://github.com/SimeonIfalore/Machine-Learning-Mercedes-Benz-Greener-Manufacturing-/blob/main/Mercedes%20Benz%20ML%20project%20Ifalore%20Simeon/Greener%20ML%20project%20Simeon.pdf" target="_blank" class="group relative block aspect-video overflow-hidden bg-gray-900 border border-white/10">
-                <img src="images/Mercedes Benz.jpg" alt="Mercedes Benz" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
-                <div class="absolute bottom-0 left-0 w-full p-6 card-gradient translate-y-2 group-hover:translate-y-0 transition duration-500">
-                    <h3 class="text-xl font-bold text-white">Mercedes-Benz</h3>
-                    <p class="text-xs text-gray-300 uppercase tracking-widest mt-1">XGBoost Optimization</p>
-                </div>
-            </a>
-            <a href="https://github.com/SimeonIfalore/Comcast-Complaint-Analysis/blob/main/Ifalore's%20COMCAST%20PROJECT%20.ipynb" target="_blank" class="group relative block aspect-video overflow-hidden bg-gray-900 border border-white/10">
-                <img src="images/comcast.jpg" alt="Comcast" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
-                <div class="absolute bottom-0 left-0 w-full p-6 card-gradient translate-y-2 group-hover:translate-y-0 transition duration-500">
-                    <h3 class="text-xl font-bold text-white">Comcast Analysis</h3>
-                    <p class="text-xs text-gray-300 uppercase tracking-widest mt-1">NLP & Customer Sentiment</p>
-                </div>
-            </a>
-            <a href="https://github.com/SimeonIfalore/Amazon-movie-recommendation-project/blob/main/Amazon%20project%20simeon/Simeon%20Ifalore%20amazon%20recommendation%20model%20project%20-%20Jupyter%20Notebook.pdf" target="_blank" class="group relative block aspect-video overflow-hidden bg-gray-900 border border-white/10">
-                <img src="images/amazon.jpg" alt="Amazon" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
-                <div class="absolute bottom-0 left-0 w-full p-6 card-gradient translate-y-2 group-hover:translate-y-0 transition duration-500">
-                    <h3 class="text-xl font-bold text-white">Amazon RecSys</h3>
-                    <p class="text-xs text-gray-300 uppercase tracking-widest mt-1">Recommendation Engine</p>
-                </div>
-            </a>
-            <a href="https://github.com/SimeonIfalore/Heart-disease-ZTM/blob/main/heart%20disease%20project/Heart%20disease%20project.ipynb" target="_blank" class="group relative block aspect-video overflow-hidden bg-gray-900 border border-white/10">
-                <img src="images/heart disease.png" alt="Heart Disease" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
-                <div class="absolute bottom-0 left-0 w-full p-6 card-gradient translate-y-2 group-hover:translate-y-0 transition duration-500">
-                    <h3 class="text-xl font-bold text-white">Medical Diagnosis</h3>
-                    <p class="text-xs text-gray-300 uppercase tracking-widest mt-1">Disease Classification</p>
-                </div>
-            </a>
-        </div>
-    </section>
-    
-    <section id="offerings" class="py-20 px-6 md:px-12 border-t border-white/5 bg-[#050505]">
-        <h2 class="text-xs text-gray-500 tracking-[0.4em] mb-12 uppercase font-bold text-center">Additional Offerings</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <div class="glass p-8 group hover:bg-white/10 transition">
-                <div class="mb-6 text-3xl text-blue-500"><i class="fas fa-chalkboard-teacher"></i></div>
-                <h3 class="text-lg font-bold text-white mb-2">Coaching</h3>
-                <p class="text-xs text-gray-400 leading-relaxed">Rigorous, hands-on instruction in Data Science & ML. I help students build and deploy real-world applications to kickstart their careers.</p>
+        <div id="search-results-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             </div>
-            <div class="glass p-8 group hover:bg-white/10 transition">
-                <div class="mb-6 text-3xl text-purple-500"><i class="fas fa-hands-helping"></i></div>
-                <h3 class="text-lg font-bold text-white mb-2">Mentorship</h3>
-                <p class="text-xs text-gray-400 leading-relaxed">Guiding aspiring data professionals through career paths, technical challenges, and capstone projects. Offering actionable feedback for growth.</p>
-            </div>
-            <div class="glass p-8 group hover:bg-white/10 transition">
-                <div class="mb-6 text-3xl text-green-500"><i class="fas fa-heart"></i></div>
-                <h3 class="text-lg font-bold text-white mb-2">Volunteering</h3>
-                <p class="text-xs text-gray-400 leading-relaxed">Dedicated to tech-for-good initiatives. Experienced in running workshops, code-alongs, and webinars for diverse global communities.</p>
-            </div>
-        </div>
     </section>
 
-    <section id="testimonials" class="py-20 px-6 md:px-12 bg-zinc-900/30 border-t border-white/5">
-        <h2 class="text-xs text-gray-500 tracking-[0.4em] mb-12 uppercase font-bold text-center">Client Stories</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div class="glass p-10 relative">
-                <i class="fa-solid fa-quote-left text-4xl text-white/10 absolute top-6 left-6"></i>
-                <p class="text-sm text-gray-300 italic mb-8 relative z-10 leading-relaxed">
-                    "Simeon's insatiable hunger for impact, exceptional collaboration skills, and unwavering drive for success made him an invaluable asset to our team. He is relentless in his pursuit of data-driven solutions."
-                </p>
-                <div>
-                    <p class="text-white font-bold text-xs uppercase tracking-widest">Uket Collins</p>
-                    <p class="text-gray-500 text-[10px] uppercase mt-1">DevOps Engineer, EHI Multi-Systems</p>
-                </div>
+    <div id="main-content-sections">
+        <main class="relative h-screen min-h-[600px] w-full flex flex-col justify-end default-section">
+            <div class="absolute inset-0 z-0">
+                <img src="images/simeon.jpeg" alt="Simeon Ifalore" class="w-full h-full object-cover object-top brightness-[0.8] grayscale hover:grayscale-0 transition duration-[2s]">
+                <div class="absolute inset-0 hero-gradient"></div>
             </div>
-            <div class="glass p-10 relative">
-                <i class="fa-solid fa-quote-left text-4xl text-white/10 absolute top-6 left-6"></i>
-                <p class="text-sm text-gray-300 italic mb-8 relative z-10 leading-relaxed">
-                    "Simeon played a key role in optimizing our data reporting. His ability to translate complex datasets into clear, actionable insights helped leadership make faster, data-backed decisions regarding our loan products."
-                </p>
-                <div>
-                    <p class="text-white font-bold text-xs uppercase tracking-widest">Femi Adeniji</p>
-                    <p class="text-gray-500 text-[10px] uppercase mt-1">Former Manager, Quickcheck Loans</p>
-                </div>
-            </div>
-            <div class="glass p-10 relative">
-                <i class="fa-solid fa-quote-left text-4xl text-white/10 absolute top-6 left-6"></i>
-                <p class="text-sm text-gray-300 italic mb-8 relative z-10 leading-relaxed">
-                    "Simeon has an exceptional eye for data storytelling. He doesn't just process numbers; he finds the narrative within them. His contributions to our reports were consistently accurate, insightful, and visually compelling."
-                </p>
-                <div>
-                    <p class="text-white font-bold text-xs uppercase tracking-widest">Adeleye Ebiesuwa</p>
-                    <p class="text-gray-500 text-[10px] uppercase mt-1">Supervisor, Statisense</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="writings" class="py-20 px-6 md:px-12 border-t border-white/5 bg-[#050505]">
-        <h2 class="text-xs text-gray-500 tracking-[0.4em] mb-12 uppercase font-bold text-center">Writings & Dashboards</h2>
+            <div class="relative z-10 px-6 md:px-12 pb-12 md:pb-20 w-full">
+                <div class="flex flex-col justify-end gap-8">
+                    <div>
+                        <h1 class="text-huge text-white mb-4">
+                            SIMEON<br>
+                            <span class="text-transparent" style="-webkit-text-stroke: 1px rgba(255,255,255,0.4);">IFALORE</span>
+                        </h1>
+                    </div>
+                    
+                    <div class="md:mb-4 max-w-xl">
+                        <p class="text-sm text-gray-400 leading-relaxed font-light opacity-80 mb-8 max-w-md">
+                            Transforming raw numbers into clear, decisive business action through scalable engineering and predictive intelligence.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://calendly.com/ifaloresimeon/new-meeting" target="_blank" class="px-6 py-3 bg-white text-black text-xs font-bold uppercase tracking-widest hover:bg-gray-200 transition">
+                                Book Consultation
+                            </a>
+                            <a href="Simeon_Ifalore.pdf" download class="px-6 py-3 border border-white text-white text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition flex items-center gap-2">
+                                <i class="fa-solid fa-download"></i> Resume
+                            </a>
+                            <a href="#projects" class="px-6 py-3 border border-white/20 text-white text-xs font-bold uppercase tracking-widest hover:bg-white/10 transition">
+                                View Work
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <section id="about" class="py-24 px-6 md:px-12 bg-[#050505] default-section">
+            <h2 class="text-xs text-gray-500 tracking-[0.4em] mb-12 uppercase font-bold">Biography</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-stretch mb-16 overflow-hidden">
+                
+                <div class="w-full md:w-[35%] shrink-0 relative min-h-[300px]">
+                    <div class="absolute inset-0 w-full h-full bg-zinc-900 rounded-sm overflow-hidden">
+                        <img src="images/simeon.jpeg" alt="Simeon Ifalore" class="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition duration-700">
+                    </div>
+                </div>
+
+                <div class="flex-1 flex flex-col min-w-0 gap-6">
+                    
+                    <div class="glass p-6 md:p-8 rounded-sm relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-white"></div>
+                        <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-3">Current Focus</p>
+                        <h3 class="text-[10px] md:text-xs font-bold text-white leading-relaxed uppercase tracking-widest break-words">
+                            BI/Senior Data Analyst <span class="text-gray-600 mx-1">|</span> 
+                            Data Scientist <span class="text-gray-600 mx-1">|</span> 
+                            AI/ML Engineer <span class="text-gray-600 mx-1">|</span> 
+                            Analytics Engineer <span class="text-gray-600 mx-1">|</span> 
+                            Data Engineer <span class="text-gray-600 mx-1">|</span> 
+                            MLOps/Cloud DevOps Engineer
+                        </h3>
+                    </div>
+
+                    <div class="glass p-6 md:p-8 rounded-sm prose prose-invert text-gray-400 font-light leading-7 text-sm max-w-none">
+                        <p class="mb-4">
+                            Hi, I’m Simeon Ifalore, a data professional passionate about building scalable solutions across analytics, AI, data engineering, and MLOps. To best reflect my multifaceted background, I have structured this portfolio to allow recruiters and collaborators to navigate directly to the specific expertise their team requires.
+                        </p>
+                        <p class="mb-4">
+                            My journey into data began in biomedical school. Encountering Biostatistics, I saw firsthand how data could explain complex real-world health and human outcomes. That curiosity evolved into a career dedicated to helping organizations transform raw, unstructured data into strategic insights and robust, reliable systems.
+                        </p>
+                        <p class="mb-0">
+                            I am driven by the conviction that work should generate measurable value, not just activity. Guided by my core principle—impact over effort—I focus on engineering solutions that empower organizations and communities to make informed, data-backed decisions and create meaningful change.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="pt-10 border-t border-white/10">
+                <h4 class="text-white font-bold mb-6 uppercase text-xs tracking-widest">Select Your Role (Click to View Projects)</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div onclick="showRole('analyst')" id="card-analyst" class="glass p-6 hover:bg-white/10 transition group cursor-pointer role-card border border-transparent">
+                        <h5 class="text-white font-bold text-sm mb-2 group-hover:text-blue-400 transition">Data Analyst / Scientist</h5>
+                        <p class="text-xs text-gray-400">Dashboards, Reporting, SQL, Power BI, Tableau, Python, R.</p>
+                    </div>
+                    <div onclick="showRole('ml')" id="card-ml" class="glass p-6 hover:bg-white/10 transition group cursor-pointer role-card border border-transparent">
+                        <h5 class="text-white font-bold text-sm mb-2 group-hover:text-green-400 transition">AI / ML Engineer</h5>
+                        <p class="text-xs text-gray-400">Predictive Modeling, Deep Learning, NLP, PyTorch, TensorFlow.</p>
+                    </div>
+                    <div onclick="showRole('eng')" id="card-eng" class="glass p-6 hover:bg-white/10 transition group cursor-pointer role-card border border-transparent">
+                        <h5 class="text-white font-bold text-sm mb-2 group-hover:text-purple-400 transition">Analytics / Data Engineer</h5>
+                        <p class="text-xs text-gray-400">Pipelines, ETL, Hadoop, Spark, Kafka, Cloud Warehousing.</p>
+                    </div>
+                    <div onclick="showRole('devops')" id="card-devops" class="glass p-6 hover:bg-white/10 transition group cursor-pointer role-card border border-transparent">
+                        <h5 class="text-white font-bold text-sm mb-2 group-hover:text-orange-400 transition">MLOps / Cloud DevOps</h5>
+                        <p class="text-xs text-gray-400">Deployment, CI/CD, Cloud Infrastructure, AWS, Docker.</p>
+                    </div>
+                </div>
+
+                <div id="role-content-container" class="mt-8 hidden p-8 glass bg-black/50 rounded-sm">
+                    
+                    <div id="content-analyst" class="role-content hidden">
+                        <h3 class="text-blue-400 font-bold uppercase tracking-widest text-xs mb-6">/// Data Analyst & Scientist Projects</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <a href="#" target="_blank" class="searchable-item glass p-6 border-l-2 border-l-blue-500 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-white font-bold text-sm">Nigerian Inflation Tracker</h4>
+                                    <i class="fa-solid fa-arrow-right -rotate-45 opacity-0 group-hover:opacity-100 transition duration-300 text-blue-400"></i>
+                                </div>
+                                <p class="text-xs text-gray-400 mb-4 flex-grow">Interactive Tableau dashboard tracking CPI and food inflation trends across 36 states.</p>
+                                <div class="flex flex-wrap gap-2 mt-auto">
+                                    <span class="tech-tag text-[10px] px-2 py-1">Tableau</span>
+                                    <span class="tech-tag text-[10px] px-2 py-1">Python</span>
+                                    <span class="tech-tag text-[10px] px-2 py-1">Excel</span>
+                                </div>
+                            </a>
+                            <a href="#" target="_blank" class="searchable-item glass p-6 border-l-2 border-l-blue-500 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-white font-bold text-sm">Customer Segmentation</h4>
+                                    <i class="fa-solid fa-arrow-right -rotate-45 opacity-0 group-hover:opacity-100 transition duration-300 text-blue-400"></i>
+                                </div>
+                                <p class="text-xs text-gray-400 mb-4 flex-grow">Clustered customer base into distinct personas using K-Means, providing deep actionable insights for targeted marketing.</p>
+                                <div class="flex flex-wrap gap-2 mt-auto">
+                                    <span class="tech-tag text-[10px] px-2 py-1">Power BI</span>
+                                    <span class="tech-tag text-[10px] px-2 py-1">Scikit-Learn</span>
+                                </div>
+                            </a>
+                            <a href="#" target="_blank" class="searchable-item glass p-6 border-l-2 border-l-blue-500 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-white font-bold text-sm">Quarterly Sales Forecasting</h4>
+                                    <i class="fa-solid fa-arrow-right -rotate-45 opacity-0 group-hover:opacity-100 transition duration-300 text-blue-400"></i>
+                                </div>
+                                <p class="text-xs text-gray-400 mb-4 flex-grow">Developed robust ARIMA and Prophet models to predict next quarter sales with high accuracy to optimize inventory planning.</p>
+                                <div class="flex flex-wrap gap-2 mt-auto">
+                                    <span class="tech-tag text-[10px] px-2 py-1">R</span>
+                                    <span class="tech-tag text-[10px] px-2 py-1">Prophet</span>
+                                </div>
+                            </a>
+                            <a href="#" target="_blank" class="searchable-item glass p-6 border-l-2 border-l-blue-500 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-white font-bold text-sm">HR Attrition Analysis</h4>
+                                    <i class="fa-solid fa-arrow-right -rotate-45 opacity-0 group-hover:opacity-100 transition duration-300 text-blue-400"></i>
+                                </div>
+                                <p class="text-xs text-gray-400 mb-4 flex-grow">Identified key factors leading to employee turnover and built a predictive dashboard to aid the HR department.</p>
+                                <div class="flex flex-wrap gap-2 mt-auto">
+                                    <span class="tech-tag text-[10px] px-2 py-1">Python</span>
+                                    <span class="tech-tag text-[10px] px-2 py-1">Pandas</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="content-ml" class="role-content hidden">
+                        <h3 class="text-green-400 font-bold uppercase tracking-widest text-xs mb-6">/// AI / ML Engineer Projects</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <a href="#" target="_blank" class="searchable-item glass p-6 border-l-2 border-l-green-500 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-white font-bold text-sm">Stock Volatility Predictor</h4>
+                                    <i class="fa-solid fa-arrow-right -rotate-45 opacity-0 group-hover:opacity-100 transition duration-300 text-green-400"></i>
+                                </div>
+                                <p class="text-xs text-gray-400 mb-4 flex-grow">Time-Series model (LSTM) built to predict volatility in US Tech stocks. Includes an automated risk-assessment module.</p>
+                                <div class="flex flex-wrap gap-2 mt-auto">
+                                    <span class="tech-tag text-[10px] px-2 py-1">TensorFlow</span>
+                                    <span class="tech-tag text-[10px] px-2 py-1">Keras</span>
+                                </div>
+                            </a>
+                            <a href="#" target="_blank" class="searchable-item glass p-6 border-l-2 border-l-green-500 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-white font-bold text-sm">Automated Defect Detection</h4>
+                                    <i class="fa-solid fa-arrow-right -rotate-45 opacity-0 group-hover:opacity-100 transition duration-300 text-green-400"></i>
+                                </div>
+                                <p class="text-xs text-gray-400 mb-4 flex-grow">Deployed a Convolutional Neural Network (CNN) to detect manufacturing defects in real-time on edge devices.</p>
+                                <div class="flex flex-wrap gap-2 mt-auto">
+                                    <span class="tech-tag text-[10px] px-2 py-1">PyTorch</span>
+                                    <span class="tech-tag text-[10px] px-2 py-1">OpenCV</span>
+                                </div>
+                            </a>
+                            <a href="#" target="_blank" class="searchable-item glass p-6 border-l-2 border-l-green-500 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-white font-bold text-sm">Sentiment Analysis API</h4>
+                                    <i class="fa-solid fa-arrow-right -rotate-45 opacity-0 group-hover:opacity-100 transition duration-300 text-green-400"></i>
+                                </div>
+                                <p class="text-xs text-gray-400 mb-4 flex-grow">Scalable FastAPI service leveraging a fine-tuned BERT model to classify live customer review sentiment.</p>
+                                <div class="flex flex-wrap gap-2 mt-auto">
+                                    <span class="tech-tag text-[10px] px-2 py-1">HuggingFace</span>
+                                    <span class="tech-tag text-[10px] px-2 py-1">FastAPI</span>
+                                </div>
+                            </a>
+                            <a href="#" target="_blank" class="searchable-item glass p-6 border-l-2 border-l-green-500 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-white font-bold text-sm">Smart OCR & Entity Extraction</h4>
+                                    <i class="fa-solid fa-arrow-right -rotate-45 opacity-0 group-hover:opacity-100 transition duration-300 text-green-400"></i>
+                                </div>
+                                <p class="text-xs text-gray-400 mb-4 flex-grow">A robust document processing pipeline that extracts text from varied PDFs and images and identifies key entities (NER).</p>
+                                <div class="flex flex-wrap gap-2 mt-auto">
+                                    <span class="tech-tag text-[10px] px-2 py-1">NLP</span>
+                                    <span class="tech-tag text-[10px] px-2 py-1">Python</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="content-eng" class="role-content hidden">
+                        <h3 class="text-purple-400 font-bold uppercase tracking-widest text-xs mb-6">/// Analytics & Data Engineer Projects</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <a href="#" target="_blank" class="searchable-item glass p-6 border-l-2 border-l-purple-500 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-white font-bold text-sm">Nigeria EdTech Portal Architecture</h4>
+                                    <i class="fa-solid fa-arrow-right -rotate-45 opacity-0 group-hover:opacity-100 transition duration-300 text-purple-400"></i>
+                                </div>
+                                <p class="text-xs text-gray-400 mb-4 flex-grow">Designed and engineered the scalable data pipeline and tracking backend for a high school learning management system (LMS).</p>
+                                <div class="flex flex-wrap gap-2 mt-auto">
+                                    <span class="tech-tag text-[10px] px-2 py-1">ETL</span>
+                                    <span class="tech-tag text-[10px] px-2 py-1">PostgreSQL</span>
+                                </div>
+                            </a>
+                            <a href="#" target="_blank" class="searchable-item glass p-6 border-l-2 border-l-purple-500 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-white font-bold text-sm">Real-Time Stock Streamer</h4>
+                                    <i class="fa-solid fa-arrow-right -rotate-45 opacity-0 group-hover:opacity-100 transition duration-300 text-purple-400"></i>
+                                </div>
+                                <p class="text-xs text-gray-400 mb-4 flex-grow">Built an interactive system feeding live stock trends using high-throughput message streaming to a frontend interface.</p>
+                                <div class="flex flex-wrap gap-2 mt-auto">
+                                    <span class="tech-tag text-[10px] px-2 py-1">Kafka</span>
+                                    <span class="tech-tag text-[10px] px-2 py-1">Plotly Dash</span>
+                                </div>
+                            </a>
+                            <a href="#" target="_blank" class="searchable-item glass p-6 border-l-2 border-l-purple-500 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-white font-bold text-sm">Optimizing Pipelines at Scale</h4>
+                                    <i class="fa-solid fa-arrow-right -rotate-45 opacity-0 group-hover:opacity-100 transition duration-300 text-purple-400"></i>
+                                </div>
+                                <p class="text-xs text-gray-400 mb-4 flex-grow">Reduced data ingestion latency significantly by refactoring massive legacy batch jobs into orchestrated event-driven workflows.</p>
+                                <div class="flex flex-wrap gap-2 mt-auto">
+                                    <span class="tech-tag text-[10px] px-2 py-1">Airflow</span>
+                                    <span class="tech-tag text-[10px] px-2 py-1">Spark</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="content-devops" class="role-content hidden">
+                        <h3 class="text-orange-400 font-bold uppercase tracking-widest text-xs mb-6">/// MLOps & Cloud DevOps Projects</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <a href="#" target="_blank" class="searchable-item glass p-6 border-l-2 border-l-orange-500 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-white font-bold text-sm">Customer Churn Monitor</h4>
+                                    <i class="fa-solid fa-arrow-right -rotate-45 opacity-0 group-hover:opacity-100 transition duration-300 text-orange-400"></i>
+                                </div>
+                                <p class="text-xs text-gray-400 mb-4 flex-grow">Automated the deployment and tracking of an ML model that flags high-risk customers in real-time, integrating direct notifications.</p>
+                                <div class="flex flex-wrap gap-2 mt-auto">
+                                    <span class="tech-tag text-[10px] px-2 py-1">MLflow</span>
+                                    <span class="tech-tag text-[10px] px-2 py-1">CI/CD</span>
+                                </div>
+                            </a>
+                            <a href="#" target="_blank" class="searchable-item glass p-6 border-l-2 border-l-orange-500 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-white font-bold text-sm">Zero-Downtime K8s Deployment</h4>
+                                    <i class="fa-solid fa-arrow-right -rotate-45 opacity-0 group-hover:opacity-100 transition duration-300 text-orange-400"></i>
+                                </div>
+                                <p class="text-xs text-gray-400 mb-4 flex-grow">Implemented a Rolling Update strategy on AWS Elastic Kubernetes Service (EKS) to ensure 99.99% uptime during complex model releases.</p>
+                                <div class="flex flex-wrap gap-2 mt-auto">
+                                    <span class="tech-tag text-[10px] px-2 py-1">AWS EKS</span>
+                                    <span class="tech-tag text-[10px] px-2 py-1">Kubernetes</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="stack" class="py-20 px-6 md:px-12 border-t border-white/5 bg-[#050505] default-section">
+            
+            <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+                
+                <div>
+                    <h3 class="text-xs text-gray-500 tracking-[0.4em] mb-8 uppercase font-bold">Tech Stack</h3>
+                    <div class="mb-6">
+                        <p class="text-xs text-gray-400 mb-3 uppercase tracking-wider">Languages & Core</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Python</span><span class="tech-tag">R</span><span class="tech-tag">SQL</span><span class="tech-tag">Streamlit</span><span class="tech-tag">Bash</span>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <p class="text-xs text-gray-400 mb-3 uppercase tracking-wider">AI & Data Science</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">PyTorch</span><span class="tech-tag">TensorFlow</span><span class="tech-tag">Scikit-learn</span><span class="tech-tag">OpenCV</span><span class="tech-tag">XGBoost</span>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <p class="text-xs text-gray-400 mb-3 uppercase tracking-wider">Big Data & Engineering</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Spark</span><span class="tech-tag">Hadoop</span><span class="tech-tag">Kafka</span><span class="tech-tag">MongoDB</span><span class="tech-tag">Databricks</span><span class="tech-tag">Airflow</span><span class="tech-tag">dbt</span>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <p class="text-xs text-gray-400 mb-3 uppercase tracking-wider">MLOps & Cloud</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">AWS</span><span class="tech-tag">Azure</span><span class="tech-tag">Docker</span><span class="tech-tag">Kubernetes</span><span class="tech-tag">MLflow</span><span class="tech-tag">CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div id="education">
+                        <h3 class="text-xs text-gray-500 tracking-[0.4em] mb-8 uppercase font-bold">Education</h3>
+                        <div class="relative border-l border-white/10 pl-8 ml-2 space-y-10">
+                            <div class="relative">
+                                <span class="absolute -left-[37px] top-1 h-4 w-4 rounded-full bg-white border-4 border-[#050505]"></span>
+                                <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
+                                    <h4 class="text-lg font-bold text-white">MSc. Information Technology</h4>
+                                    <span class="text-xs text-gray-500 font-mono">2025 - Present</span>
+                                </div>
+                                <p class="text-sm text-gray-300">MIVA University</p>
+                                <p class="text-xs text-gray-500 mt-1">Specialization in Data Science / Artificial Intelligence</p>
+                            </div>
+                            <div class="relative">
+                                <span class="absolute -left-[37px] top-1 h-4 w-4 rounded-full bg-gray-600 border-4 border-[#050505]"></span>
+                                <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
+                                    <h4 class="text-lg font-bold text-white">B.Sc. Physiology</h4>
+                                    <span class="text-xs text-gray-500 font-mono">Graduated</span>
+                                </div>
+                                <p class="text-sm text-gray-300">University of Benin</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="certifications" class="w-full">
+                <h3 class="text-xs text-gray-500 tracking-[0.4em] mb-8 uppercase font-bold text-center">Certifications & Fellowships</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <div class="glass p-6 rounded-sm hover:bg-white/5 transition flex flex-col justify-center text-center items-center">
+                        <h4 class="text-sm font-bold text-white mb-2">Analytics Engineering Fellowship</h4>
+                        <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-auto">Behind the Data Academy</p>
+                    </div>
+
+                    <div class="glass p-6 rounded-sm hover:bg-white/5 transition flex flex-col justify-center text-center items-center">
+                        <h4 class="text-sm font-bold text-white mb-2">Data Science & Business Analytics</h4>
+                        <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-auto">Simplilearn</p>
+                    </div>
+                    
+                    <div class="glass p-6 rounded-sm hover:bg-white/5 transition flex flex-col justify-center text-center items-center">
+                        <h4 class="text-sm font-bold text-white mb-2">Complete Machine Learning & Data Science</h4>
+                        <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-auto">ZTM Academy</p>
+                    </div>
+                    
+                    <div class="glass p-6 rounded-sm hover:bg-white/5 transition flex flex-col justify-center text-center items-center">
+                        <h4 class="text-sm font-bold text-white mb-2">Complete Data Analyst Bootcamp</h4>
+                        <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-auto">365 Careers</p>
+                    </div>
+                    
+                    <div class="glass p-6 rounded-sm hover:bg-white/5 transition flex flex-col justify-center text-center items-center">
+                        <h4 class="text-sm font-bold text-white mb-2">Python & R for Data Science</h4>
+                        <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-auto">IBM Skills Network</p>
+                    </div>
+                    
+                    <div class="glass p-6 rounded-sm hover:bg-white/5 transition flex flex-col justify-center text-center items-center">
+                        <h4 class="text-sm font-bold text-white mb-2">Cloud DevOps Engineer</h4>
+                        <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-auto">IBT Learning</p>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </section>
+
+        <section id="projects" class="py-12 px-6 md:px-12 bg-[#050505] border-t border-white/5 default-section">
+            <div class="flex items-center gap-4 mb-16">
+                <h2 class="text-4xl font-black text-white uppercase tracking-tighter">Selected Works</h2>
+                <div class="h-[1px] flex-grow bg-white/20"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <a href="https://github.com/SimeonIfalore/Machine-Learning-Mercedes-Benz-Greener-Manufacturing-/blob/main/Mercedes%20Benz%20ML%20project%20Ifalore%20Simeon/Greener%20ML%20project%20Simeon.pdf" target="_blank" class="searchable-item group relative block aspect-video overflow-hidden bg-gray-900 border border-white/10">
+                    <img src="images/Mercedes Benz.jpg" alt="Mercedes Benz" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
+                    <div class="absolute bottom-0 left-0 w-full p-6 card-gradient translate-y-2 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold text-white">Mercedes-Benz</h3>
+                        <p class="text-xs text-gray-300 uppercase tracking-widest mt-1">XGBoost Optimization</p>
+                    </div>
+                </a>
+                
+                <a href="https://github.com/SimeonIfalore/Comcast-Complaint-Analysis/blob/main/Ifalore's%20COMCAST%20PROJECT%20.ipynb" target="_blank" class="searchable-item group relative block aspect-video overflow-hidden bg-gray-900 border border-white/10">
+                    <img src="images/comcast.jpg" alt="Comcast" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
+                    <div class="absolute bottom-0 left-0 w-full p-6 card-gradient translate-y-2 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold text-white">Comcast Analysis</h3>
+                        <p class="text-xs text-gray-300 uppercase tracking-widest mt-1">NLP & Customer Sentiment</p>
+                    </div>
+                </a>
+                
+                <a href="https://github.com/SimeonIfalore/Amazon-movie-recommendation-project/blob/main/Amazon%20project%20simeon/Simeon%20Ifalore%20amazon%20recommendation%20model%20project%20-%20Jupyter%20Notebook.pdf" target="_blank" class="searchable-item group relative block aspect-video overflow-hidden bg-gray-900 border border-white/10">
+                    <img src="images/amazon.jpg" alt="Amazon" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
+                    <div class="absolute bottom-0 left-0 w-full p-6 card-gradient translate-y-2 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold text-white">Amazon RecSys</h3>
+                        <p class="text-xs text-gray-300 uppercase tracking-widest mt-1">Recommendation Engine</p>
+                    </div>
+                </a>
+                
+                <a href="https://github.com/SimeonIfalore/Heart-disease-ZTM/blob/main/heart%20disease%20project/Heart%20disease%20project.ipynb" target="_blank" class="searchable-item group relative block aspect-video overflow-hidden bg-gray-900 border border-white/10">
+                    <img src="images/heart disease.png" alt="Heart Disease" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
+                    <div class="absolute bottom-0 left-0 w-full p-6 card-gradient translate-y-2 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold text-white">Medical Diagnosis</h3>
+                        <p class="text-xs text-gray-300 uppercase tracking-widest mt-1">Disease Classification</p>
+                    </div>
+                </a>
+            </div>
+        </section>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            
-            <div class="glass p-8 flex flex-col h-full group">
-                <div class="flex justify-between items-start mb-4">
-                    <img src="images/medium.png" class="h-8 opacity-80 group-hover:invert group-hover:opacity-100" alt="Medium">
-                    <a href="https://medium.com/@ifaloresimeon" target="_blank"><i class="fa-solid fa-arrow-right -rotate-45 hover:rotate-0 transition duration-300"></i></a>
+        <section id="offerings" class="py-20 px-6 md:px-12 border-t border-white/5 bg-[#050505] default-section">
+            <h2 class="text-xs text-gray-500 tracking-[0.4em] mb-12 uppercase font-bold text-center">Additional Offerings</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                
+                <div onclick="toggleApps()" class="glass p-8 flex flex-col h-full group hover:bg-white/5 transition duration-300 cursor-pointer border border-transparent" id="apps-trigger">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="text-3xl text-blue-500"><i class="fas fa-rocket"></i></div>
+                        <i class="fa-solid fa-arrow-down group-hover:translate-y-1 transition duration-300 text-blue-500" id="apps-icon"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-4">Apps</h3>
+                    <p class="text-xs text-gray-400 mb-6 leading-relaxed flex-grow">A complete collection of deployed AI agents, computer vision systems, and robust data pipelines built for production.</p>
+                    <ul class="space-y-4 mb-2">
+                        <li><span class="text-xs text-gray-400 group-hover:text-white transition block border-t border-white/10 pt-4 leading-relaxed"><i class="fa-solid fa-layer-group mr-2"></i>Click to view App Archive</span></li>
+                    </ul>
                 </div>
-                <h3 class="font-bold text-lg mb-4">Featured Writings</h3>
-                <ul class="space-y-4 mb-6">
-                    <li><a href="https://medium.com/@ifaloresimeon/different-ways-to-push-to-github-without-getting-stuck-on-password-errors-b41de214da2c" target="_blank" class="text-xs text-gray-400 hover:text-white transition block border-b border-white/10 pb-3 leading-relaxed">Different Ways to Push to GitHub (Without Getting Stuck on Password Errors)</a></li>
-                    <li><a href="https://medium.com/@ifaloresimeon/installing-docker-on-windows-when-docker-desktop-fails-and-a-better-alternative-that-actually-a3aff94912e6" target="_blank" class="text-xs text-gray-400 hover:text-white transition block border-b border-white/10 pb-3 leading-relaxed">Installing Docker on Windows: When Docker Desktop Fails and a Better Alternative</a></li>
-                    <li><a href="https://medium.com/@ifaloresimeon/dealing-with-py4jjavaerror-the-missing-link-for-pyspark-on-windows-379215a710d3" target="_blank" class="text-xs text-gray-400 hover:text-white transition block leading-relaxed">Dealing with Py4JJavaError: The “Missing Link” for PySpark on Windows</a></li>
-                </ul>
-                <a href="https://medium.com/@ifaloresimeon" target="_blank" class="mt-auto text-[10px] uppercase font-bold tracking-widest border-b border-white/30 pb-1 w-max hover:border-white transition">Read on Medium</a>
+                
+                <div class="glass p-8 flex flex-col h-full group hover:bg-white/5 transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="text-3xl text-green-500"><i class="fas fa-heart"></i></div>
+                        <a href="https://sites.google.com/view/dariia-mykhailyshyna/main/r-workshops-for-ukraine#h.u047uauiaqeu" target="_blank"><i class="fa-solid fa-arrow-right -rotate-45 hover:rotate-0 transition duration-300"></i></a>
+                    </div>
+                    <h3 class="font-bold text-lg mb-4">Volunteering</h3>
+                    <p class="text-xs text-gray-400 mb-6 leading-relaxed flex-grow">Dedicated to tech-for-good initiatives. Experienced in running workshops, code-alongs, and webinars for diverse global communities.</p>
+                    <ul class="space-y-4 mb-2">
+                        <li><a href="https://sites.google.com/view/dariia-mykhailyshyna/main/r-workshops-for-ukraine#h.u047uauiaqeu" target="_blank" class="text-xs text-gray-400 hover:text-white transition block border-t border-white/10 pt-4 leading-relaxed"><i class="fa-solid fa-link mr-2"></i>Deploying ML Models with Streamlit (Workshops for Ukraine)</a></li>
+                    </ul>
+                </div>
             </div>
+
+            <div id="apps-container" class="mt-8 hidden p-8 glass bg-black/50 rounded-sm max-w-7xl mx-auto">
+                <h3 class="text-blue-400 font-bold uppercase tracking-widest text-xs mb-6">/// Deployed AI & Web Apps</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="#" target="_blank" class="searchable-item glass p-6 border-l-2 border-l-blue-500 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-white font-bold text-sm">Smart OCR & Extraction</h4>
+                            <i class="fa-solid fa-arrow-up-right-from-square opacity-0 group-hover:opacity-100 transition duration-300 text-blue-400 text-xs"></i>
+                        </div>
+                        <p class="text-xs text-gray-400 mb-4 flex-grow">A document processing pipeline that extracts text from PDFs/images and identifies key entities (NER).</p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="tech-tag text-[10px] px-2 py-1">NLP</span>
+                            <span class="tech-tag text-[10px] px-2 py-1">Python</span>
+                        </div>
+                    </a>
+                    
+                    <a href="#" target="_blank" class="searchable-item glass p-6 border-l-2 border-l-blue-500 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-white font-bold text-sm">GPT Stock Analyzer</h4>
+                            <i class="fa-solid fa-arrow-up-right-from-square opacity-0 group-hover:opacity-100 transition duration-300 text-blue-400 text-xs"></i>
+                        </div>
+                        <p class="text-xs text-gray-400 mb-4 flex-grow">An intelligent agent that analyzes financial news sentiment and stock trends using LangChain & OpenAI.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="tech-tag text-[10px] px-2 py-1">LangChain</span>
+                            <span class="tech-tag text-[10px] px-2 py-1">OpenAI</span>
+                        </div>
+                    </a>
+
+                    <a href="#" target="_blank" class="searchable-item glass p-6 border-l-2 border-l-blue-500 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-white font-bold text-sm">Speech-to-Text App</h4>
+                            <i class="fa-solid fa-arrow-up-right-from-square opacity-0 group-hover:opacity-100 transition duration-300 text-blue-400 text-xs"></i>
+                        </div>
+                        <p class="text-xs text-gray-400 mb-4 flex-grow">A Streamlit app for transcribing and summarizing live audio streams with high accuracy.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="tech-tag text-[10px] px-2 py-1">Streamlit</span>
+                            <span class="tech-tag text-[10px] px-2 py-1">Audio Processing</span>
+                        </div>
+                    </a>
+
+                    <a href="#" target="_blank" class="searchable-item glass p-6 border-l-2 border-l-blue-500 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-white font-bold text-sm">Biometric Access Control</h4>
+                            <i class="fa-solid fa-arrow-up-right-from-square opacity-0 group-hover:opacity-100 transition duration-300 text-blue-400 text-xs"></i>
+                        </div>
+                        <p class="text-xs text-gray-400 mb-4 flex-grow">A facial recognition system using OpenCV & Dlib to verify identities for secure entry logging.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="tech-tag text-[10px] px-2 py-1">OpenCV</span>
+                            <span class="tech-tag text-[10px] px-2 py-1">Dlib</span>
+                        </div>
+                    </a>
+
+                    <a href="#" target="_blank" class="searchable-item glass p-6 border-l-2 border-l-blue-500 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-white font-bold text-sm">Premier League Predictor</h4>
+                            <i class="fa-solid fa-arrow-up-right-from-square opacity-0 group-hover:opacity-100 transition duration-300 text-blue-400 text-xs"></i>
+                        </div>
+                        <p class="text-xs text-gray-400 mb-4 flex-grow">An AI-powered web app that predicts match outcomes with 78% accuracy using historical data.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="tech-tag text-[10px] px-2 py-1">ML</span>
+                            <span class="tech-tag text-[10px] px-2 py-1">Sports Analytics</span>
+                        </div>
+                    </a>
+
+                    <a href="#" target="_blank" class="searchable-item glass p-6 border-l-2 border-l-blue-500 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-white font-bold text-sm">Face Swapper (GANs)</h4>
+                            <i class="fa-solid fa-arrow-up-right-from-square opacity-0 group-hover:opacity-100 transition duration-300 text-blue-400 text-xs"></i>
+                        </div>
+                        <p class="text-xs text-gray-400 mb-4 flex-grow">A research-based deepfake application demonstrating GAN capabilities for synthetic video media.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="tech-tag text-[10px] px-2 py-1">Generative AI</span>
+                            <span class="tech-tag text-[10px] px-2 py-1">GANs</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-20 px-6 md:px-12 bg-zinc-900/30 border-t border-white/5 default-section">
+            <h2 class="text-xs text-gray-500 tracking-[0.4em] mb-12 uppercase font-bold text-center">Client Stories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="glass p-10 relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-white/10 absolute top-6 left-6"></i>
+                    <p class="text-sm text-gray-300 italic mb-8 relative z-10 leading-relaxed">
+                        "Simeon's insatiable hunger for impact, exceptional collaboration skills, and unwavering drive for success made him an invaluable asset to our team. He is relentless in his pursuit of data-driven solutions."
+                    </p>
+                    <div>
+                        <p class="text-white font-bold text-xs uppercase tracking-widest">Uket Collins</p>
+                        <p class="text-gray-500 text-[10px] uppercase mt-1">DevOps Engineer, EHI Multi-Systems</p>
+                    </div>
+                </div>
+                <div class="glass p-10 relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-white/10 absolute top-6 left-6"></i>
+                    <p class="text-sm text-gray-300 italic mb-8 relative z-10 leading-relaxed">
+                        "Simeon played a key role in optimizing our data reporting. His ability to translate complex datasets into clear, actionable insights helped leadership make faster, data-backed decisions regarding our loan products."
+                    </p>
+                    <div>
+                        <p class="text-white font-bold text-xs uppercase tracking-widest">Femi Adeniji</p>
+                        <p class="text-gray-500 text-[10px] uppercase mt-1">Former Manager, Quickcheck Loans</p>
+                    </div>
+                </div>
+                <div class="glass p-10 relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-white/10 absolute top-6 left-6"></i>
+                    <p class="text-sm text-gray-300 italic mb-8 relative z-10 leading-relaxed">
+                        "Simeon has an exceptional eye for data storytelling. He doesn't just process numbers; he finds the narrative within them. His contributions to our reports were consistently accurate, insightful, and visually compelling."
+                    </p>
+                    <div>
+                        <p class="text-white font-bold text-xs uppercase tracking-widest">Adeleye Ebiesuwa</p>
+                        <p class="text-gray-500 text-[10px] uppercase mt-1">Supervisor, Statisense</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="writings" class="py-20 px-6 md:px-12 border-t border-white/5 bg-[#050505] default-section">
+            <h2 class="text-xs text-gray-500 tracking-[0.4em] mb-12 uppercase font-bold text-center">Writings & Platforms</h2>
             
-            <a href="https://public.tableau.com/app/profile/simeon.ifalore" target="_blank" class="glass p-8 flex flex-col justify-between h-64 group hover:bg-white hover:text-black transition duration-300">
-                <div class="flex justify-between items-start">
-                    <img src="images/Tableau.jpg" class="h-10 w-10 rounded-sm object-cover opacity-90 group-hover:opacity-100" alt="Tableau">
-                    <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition duration-300"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                
+                <div class="glass p-8 flex flex-col h-full group hover:bg-white/5 transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <img src="images/medium.png" class="h-8 opacity-80 group-hover:invert group-hover:opacity-100" alt="Medium">
+                        <a href="https://medium.com/@ifaloresimeon" target="_blank"><i class="fa-solid fa-arrow-right -rotate-45 hover:rotate-0 transition duration-300"></i></a>
+                    </div>
+                    <h3 class="font-bold text-lg mb-4">Featured Writings</h3>
+                    <ul class="space-y-4 mb-6">
+                        <li><a href="https://medium.com/@ifaloresimeon/different-ways-to-push-to-github-without-getting-stuck-on-password-errors-b41de214da2c" target="_blank" class="searchable-item text-xs text-gray-400 hover:text-white transition block border-b border-white/10 pb-3 leading-relaxed">Different Ways to Push to GitHub (Without Getting Stuck on Password Errors)</a></li>
+                        <li><a href="https://medium.com/@ifaloresimeon/installing-docker-on-windows-when-docker-desktop-fails-and-a-better-alternative-that-actually-a3aff94912e6" target="_blank" class="searchable-item text-xs text-gray-400 hover:text-white transition block border-b border-white/10 pb-3 leading-relaxed">Installing Docker on Windows: When Docker Desktop Fails and a Better Alternative</a></li>
+                        <li><a href="https://medium.com/@ifaloresimeon/dealing-with-py4jjavaerror-the-missing-link-for-pyspark-on-windows-379215a710d3" target="_blank" class="searchable-item text-xs text-gray-400 hover:text-white transition block leading-relaxed">Dealing with Py4JJavaError: The “Missing Link” for PySpark on Windows</a></li>
+                    </ul>
+                    <a href="https://medium.com/@ifaloresimeon" target="_blank" class="mt-auto text-[10px] uppercase font-bold tracking-widest border-b border-white/30 pb-1 w-max hover:border-white transition">Read on Medium</a>
                 </div>
-                <div>
-                    <h3 class="font-bold text-lg">Tableau Public</h3>
-                    <p class="text-xs opacity-60 mt-1">Interactive data stories & dashboards</p>
-                </div>
-            </a>
+                
+                <a href="https://public.tableau.com/app/profile/simeon.ifalore" target="_blank" class="glass p-8 flex flex-col justify-between h-64 group hover:bg-white hover:text-black transition duration-300">
+                    <div class="flex justify-between items-start">
+                        <img src="images/Tableau.jpg" class="h-10 w-10 rounded-sm object-cover opacity-90 group-hover:opacity-100" alt="Tableau">
+                        <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition duration-300"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">Tableau Public</h3>
+                        <p class="text-xs opacity-60 mt-1">Interactive data stories & dashboards</p>
+                    </div>
+                </a>
 
-            <a href="#" target="_blank" class="glass p-8 flex flex-col justify-between h-64 group hover:bg-white hover:text-black transition duration-300">
-                <div class="flex justify-between items-start">
-                    <div class="text-3xl text-yellow-500"><i class="fa-solid fa-chart-simple"></i></div>
-                    <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition duration-300"></i>
+                <a href="#" target="_blank" class="glass p-8 flex flex-col justify-between h-64 group hover:bg-white hover:text-black transition duration-300">
+                    <div class="flex justify-between items-start">
+                        <div class="text-3xl text-yellow-500"><i class="fa-solid fa-chart-simple"></i></div>
+                        <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition duration-300"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">Power BI</h3>
+                        <p class="text-xs opacity-60 mt-1">Enterprise business intelligence reports</p>
+                    </div>
+                </a>
+                
+                <div onclick="toggleDashboards()" class="glass p-8 flex flex-col justify-between h-64 group hover:bg-white hover:text-black transition duration-300 cursor-pointer border border-transparent" id="dashboards-trigger">
+                    <div class="flex justify-between items-start">
+                        <div class="text-3xl text-green-600"><i class="fa-solid fa-chart-line"></i></div>
+                        <i class="fa-solid fa-arrow-down group-hover:translate-y-1 transition duration-300" id="dashboards-icon"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">Other Dashboards</h3>
+                        <p class="text-xs opacity-60 mt-1">Excel, Google Sheets & Looker (Click to open)</p>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="font-bold text-lg">Power BI</h3>
-                    <p class="text-xs opacity-60 mt-1">Enterprise business intelligence reports</p>
-                </div>
-            </a>
-        </div>
-    </section>
+            </div>
 
-    <footer class="px-6 md:px-12 py-12 bg-black border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-gray-500">
-        <p>&copy; 2026 Simeon Ifalore.</p>
-        <div class="flex gap-6 mt-4 md:mt-0">
-            <a href="https://twitter.com/SIfalore" class="hover:text-white">Twitter</a>
-            <a href="https://www.linkedin.com/in/simeon-ifalore/" class="hover:text-white">LinkedIn</a>
-            <a href="https://github.com/SimeonIfalore" class="hover:text-white">Github</a>
-            <a href="mailto:ifaloresimeon@gmail.com" class="hover:text-white">Email</a>
-        </div>
-    </footer>
+            <div id="dashboards-container" class="mt-8 hidden p-8 glass bg-black/50 rounded-sm max-w-7xl mx-auto">
+                <p class="text-sm text-gray-400 font-mono mb-6 opacity-80">> Establishing direct connection to live reports. Click any card to open the interactive models in a new tab.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <a href="https://docs.google.com/spreadsheets/d/1ysT5MMQDSdbfjZvVoWiwCxlWm_Q2MXC06H2nSC2kjkk/edit?gid=1111057913#gid=1111057913" target="_blank" class="searchable-item glass p-6 border-t-2 border-t-green-500 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                        <h4 class="text-white font-bold mb-2 text-sm flex items-center gap-2"><i class="fa-solid fa-table text-green-500"></i> Marketing Dashboard</h4>
+                        <p class="text-xs text-gray-400 mb-4 flex-grow">Interactive Google Sheets marketing and KPI tracker.</p>
+                        <div class="text-[10px] uppercase tracking-widest text-gray-500 group-hover:text-white transition mt-auto flex items-center">Open Webpage <i class="fa-solid fa-arrow-up-right-from-square ml-2 mb-0.5"></i></div>
+                    </a>
+                    
+                    <a href="https://1drv.ms/x/c/a394f530f76e7ce4/IQAEae50Tu8GQrYMTuKZoN9SAeZL8pC8VuK_qJpVodZpc08?e=e3cdaK" target="_blank" class="searchable-item glass p-6 border-t-2 border-t-green-600 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                        <h4 class="text-white font-bold mb-2 text-sm flex items-center gap-2"><i class="fa-solid fa-file-excel text-green-600"></i> Sales Dashboard</h4>
+                        <p class="text-xs text-gray-400 mb-4 flex-grow">Interactive sales tracking and financial forecasting model.</p>
+                        <div class="text-[10px] uppercase tracking-widest text-gray-500 group-hover:text-white transition mt-auto flex items-center">Open Webpage <i class="fa-solid fa-arrow-up-right-from-square ml-2 mb-0.5"></i></div>
+                    </a>
+                    
+                    <a href="YOUR_LOOKER_LINK_HERE" target="_blank" class="searchable-item glass p-6 border-t-2 border-t-blue-500 hover:bg-white/5 transition flex flex-col group cursor-pointer block">
+                        <h4 class="text-white font-bold mb-2 text-sm flex items-center gap-2"><i class="fa-solid fa-chart-pie text-blue-500"></i> Looker Studio</h4>
+                        <p class="text-xs text-gray-400 mb-4 flex-grow">Marketing performance and KPI dashboard.</p>
+                        <div class="text-[10px] uppercase tracking-widest text-gray-500 group-hover:text-white transition mt-auto flex items-center">Open Webpage <i class="fa-solid fa-arrow-up-right-from-square ml-2 mb-0.5"></i></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="px-6 md:px-12 py-12 bg-black border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-gray-500 default-section">
+            <p>&copy; 2026 Simeon Ifalore.</p>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <a href="https://twitter.com/SIfalore" class="hover:text-white transition-colors">Twitter</a>
+                <a href="https://www.linkedin.com/in/simeon-ifalore/" class="hover:text-white transition-colors">LinkedIn</a>
+                <a href="https://github.com/SimeonIfalore" class="hover:text-white transition-colors">Github</a>
+                <a href="mailto:ifaloresimeon@gmail.com" class="hover:text-white transition-colors">Email</a>
+            </div>
+        </footer>
+    </div>
 
     <script>
+        // Mobile Menu Logic
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = menuBtn.querySelector('i');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        // Toggle menu open/close
         menuBtn.addEventListener('click', () => {
             const isClosed = mobileMenu.classList.contains('opacity-0');
             if (isClosed) {
-                // Open Menu
                 mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
                 menuIcon.classList.remove('fa-bars');
                 menuIcon.classList.add('fa-xmark');
             } else {
-                // Close Menu
                 mobileMenu.classList.add('opacity-0', 'pointer-events-none');
                 menuIcon.classList.remove('fa-xmark');
                 menuIcon.classList.add('fa-bars');
             }
         });
 
-        // Close menu automatically when a link is clicked
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('opacity-0', 'pointer-events-none');
@@ -468,6 +779,112 @@
                 menuIcon.classList.add('fa-bars');
             });
         });
+
+        // Role Tab Switching Logic
+        function showRole(role) {
+            document.getElementById('role-content-container').classList.remove('hidden');
+            document.querySelectorAll('.role-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.role-card').forEach(el => {
+                el.classList.remove('border-white/50', 'bg-white/10');
+                el.classList.add('border-transparent');
+            });
+            
+            document.getElementById('content-' + role).classList.remove('hidden');
+            
+            const activeCard = document.getElementById('card-' + role);
+            activeCard.classList.remove('border-transparent');
+            activeCard.classList.add('border-white/50', 'bg-white/10');
+
+            document.getElementById('role-content-container').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Toggle Apps Logic
+        function toggleApps() {
+            const container = document.getElementById('apps-container');
+            const icon = document.getElementById('apps-icon');
+            const trigger = document.getElementById('apps-trigger');
+
+            if (container.classList.contains('hidden')) {
+                container.classList.remove('hidden');
+                icon.classList.remove('fa-arrow-down');
+                icon.classList.add('fa-arrow-up');
+                trigger.classList.remove('border-transparent');
+                trigger.classList.add('border-white/50', 'bg-white/10');
+                container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } else {
+                container.classList.add('hidden');
+                icon.classList.remove('fa-arrow-up');
+                icon.classList.add('fa-arrow-down');
+                trigger.classList.add('border-transparent');
+                trigger.classList.remove('border-white/50', 'bg-white/10');
+            }
+        }
+
+        // Toggle Other Dashboards
+        function toggleDashboards() {
+            const container = document.getElementById('dashboards-container');
+            const icon = document.getElementById('dashboards-icon');
+            const trigger = document.getElementById('dashboards-trigger');
+
+            if (container.classList.contains('hidden')) {
+                container.classList.remove('hidden');
+                icon.classList.remove('fa-arrow-down');
+                icon.classList.add('fa-arrow-up');
+                trigger.classList.remove('border-transparent');
+                trigger.classList.add('border-white/50', 'bg-white/10');
+                container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } else {
+                container.classList.add('hidden');
+                icon.classList.remove('fa-arrow-up');
+                icon.classList.add('fa-arrow-down');
+                trigger.classList.add('border-transparent');
+                trigger.classList.remove('border-white/50', 'bg-white/10');
+            }
+        }
+
+        // Dynamic Search Functionality
+        function performSearch(query) {
+            query = query.toLowerCase().trim();
+            const searchResultsSection = document.getElementById('search-results-section');
+            const searchResultsGrid = document.getElementById('search-results-grid');
+            const defaultSections = document.querySelectorAll('.default-section');
+
+            if (query.length < 2) {
+                // Hide search results, show normal page
+                searchResultsSection.classList.add('hidden');
+                defaultSections.forEach(sec => sec.classList.remove('hidden'));
+                return;
+            }
+
+            // Hide normal page, show search results
+            defaultSections.forEach(sec => sec.classList.add('hidden'));
+            searchResultsSection.classList.remove('hidden');
+            
+            // Clear previous results
+            searchResultsGrid.innerHTML = '';
+            
+            let found = false;
+            // Grab all items tagged with .searchable-item
+            document.querySelectorAll('.searchable-item').forEach(item => {
+                // check inner text
+                if (item.innerText.toLowerCase().includes(query)) {
+                    let clone = item.cloneNode(true);
+                    
+                    // If it's a list item (from role sections), we need to ensure it stands well on its own
+                    if (clone.classList.contains('border-l-2')) {
+                        // Keep styling intact for standalone view
+                        clone.className = "glass p-6 hover:bg-white/5 transition flex flex-col group cursor-pointer block border border-white/10 " + Array.from(clone.classList).find(c => c.startsWith('border-l-'));
+                    }
+                    
+                    searchResultsGrid.appendChild(clone);
+                    found = true;
+                }
+            });
+
+            if (!found) {
+                searchResultsGrid.innerHTML = '<div class="col-span-full text-center py-20 text-gray-500 font-mono text-sm">> 0 results found. Try adjusting your search query.</div>';
+            }
+        }
     </script>
 </body>
 </html>
